@@ -1,0 +1,77 @@
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: insurance-service
+#  datasource:
+#    url: jdbc:postgresql://127.0.0.1:5432/insurance_db?createDatabaseIfNotExist=true
+#    username: postgres
+#    password: 12345
+#    testwhileIdle: true
+#    validationQuery: SELECT 1
+#    minIdle: 10
+#    maxIdle: 50
+#    initialSize: 10
+#    maxWait: 60000
+#    testOnBorrow: true
+#    hikari:
+#      maxLifetime: 30000
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+          #mail:
+          #host: smtp.gmail.com
+          #port: 587
+          #username: email
+          #password: password
+          #sign: ...
+          #location: Casablanca
+          #properties:
+          #mail:
+          #smtp:
+          #auth: true
+        #starttls:
+        #enable: true
+      #ldap:
+      #urls: ldap://ldap.forumsys.com:389/
+      #base:
+      #dn: dc=example,dc=com
+      #username: cn=read-only-admin,dc=example,dc=com
+      #password: password
+      #user:
+      #dn:
+      #pattern: uid={0}
+
+
+
+
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:pdp_db
+    username: sa
+    password: sa
+
+
+springdoc:
+  swagger-ui:
+    path: /insurance-service/api/swagger-ui
+  api-docs:
+    path: /insurance-service/api/api-docs
+
+
+server:
+  port: 9000
+
+default:
+  role: DEFAULT
+
+
